@@ -8,6 +8,6 @@ A simple rails template with:
 	
 ## Usage
 
-	git clone this repo
+	git clone git@github.com:dennysfredericci/rails-template.git
 	
 	rails new newapp-with-template -m ./rails-template/template.rb
