@@ -1,10 +1,20 @@
 # Rails-Template
 
-A simple rails template with:
+Cloud Template:
 
 	* Twitter-Bootstrap
 	* Devise
-	* Deploy on Heroku
+	* Thin
+	* Heroku
+	* TODO: add other cloud providers
+
+Simple Template:
+
+	* Twitter-Bootstrap
+	* Simple_Form
+	* Devise
+	* Thin
+	
 	
 ## Usage
 
