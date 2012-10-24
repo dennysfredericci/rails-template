@@ -1,15 +1,11 @@
+require 'rails'
+require 'bundler'
 require 'yaml'
 
 def replace_content_from_file(file_name, content, new_content)
   text = File.read(file_name)
   result = text.gsub(content, new_content)
   File.open(file_name, "w") {|file| file.puts result}
-end
-
-def add_twitter_bootstrap
-  gem 'twitter-bootstrap-rails', '>= 2.1.1'
-  generate "bootstrap:install --stylesheet-engine=less"
-  generate "bootstrap:layout application --force"
 end
 
 def add_web_server
@@ -23,6 +19,12 @@ def add_devise
   model_name = "usuario" if model_name.blank?
   generate("devise", model_name)
   generate("devise:views", model_name)
+end
+
+def add_twitter_bootstrap
+  gem 'twitter-bootstrap-rails', '>= 2.1.1'
+  generate "bootstrap:install --stylesheet-engine=less"
+  generate "bootstrap:layout application --force"
 end
 
 def custom_config
@@ -66,14 +68,15 @@ end
 
 def heroku_deploy
 
-  add_heroku_config
+    add_heroku_config
 
-  git :add => "."
-  git :commit => "-a -m 'Adding heroku config'"
-  run "heroku create #{@app_name}"
-  git :push => 'heroku master'
-  run 'heroku run rake db:migrate'
-  run 'heroku open'
+    git :add => "."
+    git :commit => "-a -m 'Adding heroku config'"
+    run "heroku create #{@app_name}"
+    git :push => 'heroku master'
+    run 'heroku run rake db:migrate'
+    run 'heroku open'
+
 end
 
 def main

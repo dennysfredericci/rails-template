@@ -18,6 +18,10 @@ Simple Template:
 	
 ## Usage
 
-	git clone git@github.com:dennysfredericci/rails-template.git
+Simple Template:
+
+	rails new your_app -m https://raw.github.com/dennysfredericci/rails-template/master/simple_template.rb
 	
-	rails new newapp-with-template -m ./rails-template/template.rb
+Cloud Template:
+
+	rails new your_app -m https://raw.github.com/dennysfredericci/rails-template/master/cloud_template.rb
